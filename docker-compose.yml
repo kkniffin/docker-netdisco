@@ -1,0 +1,26 @@
+postgres:
+  container_name: db
+  image: postgres
+  restart: always
+  volumes:
+    - /opt/docker_containers/postgres/data:/data
+  environment:
+    - PGDATA=/data
+    - POSTGRES_PASSWORD-netdisco
+    - POSTGRES_USER=netdisco
+
+netdisco:
+  container_name: netdisco
+  image: sheeprine/docker-netdisco
+  restart: always
+  ports:
+    - 5000:5000
+  environment:
+    - NETDISCO_DB_USER=netdisco
+    - NETDISCO_DB_PASS=netdisco
+    - NETDISCO_DOMAIN=domain.local
+    - NETDISCO_RO_COMMUNITY=public
+    - NETDISCO_WR_COMMUNITY=private
+    - NETDISCO_HOME=/netdisco
+  links:
+    - postgres:db
