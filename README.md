@@ -4,8 +4,8 @@ https://metacpan.org/pod/App::Netdisco
 
 Use Docker-Compose and included yml config file for easy startup of both DB and Netdisco
 
-deployment.yml changes after initial startup
 
+####Modify deployment.yml changes after initial startup for additional features
 ```
 # Add LDAP Config Settings
 ldap:
