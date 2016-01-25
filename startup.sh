@@ -39,7 +39,7 @@ set_environment() {
 
 check_environment() {
     # check if Environment File Exists, if not re-crate
-    if [ ! -f $ENV_FILE ]; then
+    if [ ! -e "$NETDISCO_HOME/environments/deployment.yml" ]; then
         set_environment
     fi
 }
