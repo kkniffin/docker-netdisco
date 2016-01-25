@@ -6,7 +6,7 @@ Use Docker-Compose and included yml config file for easy startup of both DB and 
 
 deployment.yml changes after initial startup
 
-`# Add LDAP Config Settings
+```# Add LDAP Config Settings
 ldap:
    servers:
      - 'dc1.dns'
@@ -14,7 +14,7 @@ ldap:
    user_string: 'MYDOMAIN\%USER%'
    base: <base dn>
    opts:
-     debug: 3`
+     debug: 3```
 
 # Inventory all MACs on all VLANS.
 macsuck_all_vlans: true
