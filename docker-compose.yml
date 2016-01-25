@@ -25,6 +25,6 @@ netdisco:
     - NETDISCO_HOME=/netdisco
   volumes:
   # Location to save Config File for Netdisco
-    - <location>/deployment.yml:/netdisco/environments/deployment.yml
+    - <directory>:/netdisco/environments:rw
   links:
     - postgres:db
