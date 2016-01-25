@@ -8,7 +8,7 @@ deployment.yml changes after initial startup
 
 ```# Add LDAP Config Settings
 ldap:
-   servers:
+   servers:</br>
      - 'dc1.dns'
      - 'dc2.dns'
    user_string: 'MYDOMAIN\%USER%'
