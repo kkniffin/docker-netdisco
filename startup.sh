@@ -39,7 +39,7 @@ set_environment() {
 
 check_environment() {
     # check if Environment File Exists, if not re-crate
-    if [ ! -d $ENV_FILE ]; then
+    if [ ! -f $ENV_FILE ]; then
         set_environment
     fi
 }
