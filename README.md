@@ -35,6 +35,21 @@ reports:
         WHERE d.ps1_status<>''
           AND d.ps1_status is not null
       ORDER BY name
+  - tag: device_inventory
+    label: 'Device Inventory'
+    category: Device
+    columns:
+      - {name: 'Name'}
+      - {serial: 'Serial'}
+      - {ip: 'IP'}
+      - {dns: 'DNS'}
+      - {model: 'Model'}
+    query: |
+      SELECT d.name, d.serial, d.uptime, d.ip, d.dns, d.model
+        FROM device d
+        WHERE d.serial <> ''
+          AND d.serial is not null
+        ORDER BY name
 
 port_control_reasons:
   address:     'Address Allocation Abuse'
