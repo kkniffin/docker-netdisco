@@ -3,7 +3,8 @@ postgres:
   image: postgres
   restart: always
   volumes:
-    - /opt/docker_containers/postgres/data:/data
+  # Location to save Postgres Database
+    - <location>:/data
   environment:
     - PGDATA=/data
     - POSTGRES_PASSWORD-netdisco
@@ -22,5 +23,8 @@ netdisco:
     - NETDISCO_RO_COMMUNITY=public
     - NETDISCO_WR_COMMUNITY=private
     - NETDISCO_HOME=/netdisco
+  volumes:
+  # Location to save Config File for Netdisco
+    - <location>/deployment.yml:/netdisco/environments/deployment.yml
   links:
     - postgres:db
