@@ -38,7 +38,7 @@ set_environment() {
 }
 
 check_environment() {
-    if [ ! -d $NETDISCO_HOME/environments ]; then
+    if [ ! -d $ENV_FILE ]; then
         set_environment
     fi
 }
