@@ -18,5 +18,7 @@ ldap:
      debug: 3
 ```  
 
+```
 # Inventory all MACs on all VLANS.
 macsuck_all_vlans: true
+```
