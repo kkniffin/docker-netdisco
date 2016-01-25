@@ -38,6 +38,7 @@ set_environment() {
 }
 
 check_environment() {
+    # check if Environment File Exists, if not re-crate
     if [ ! -d $ENV_FILE ]; then
         set_environment
     fi
@@ -45,6 +46,7 @@ check_environment() {
 
 check_postgres
 check_environment
+# Provide Answers to Configuration Questions of Netdisco
 sed -i "s/new('netdisco')/new('netdisco', \\*STDIN, \\*STDOUT)/" $NETDISCO_HOME/perl5/bin/netdisco-deploy
 $NETDISCO_HOME/perl5/bin/netdisco-deploy /tmp/oui.txt << ANSWERS
 y
